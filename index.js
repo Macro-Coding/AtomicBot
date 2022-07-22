@@ -29,7 +29,7 @@ Client.on("messageCreate", (message) => {
     const commandIndex = Commands[cmd]
 
     if (!commandIndex)
-        return message.channel.send(`Invalid command \`${cmd}\`. Please use \`m:help\` for a list of commands.`)
+        return message.channel.send(`Invalid command \`${cmd}\`. Please use \`${BotConfig.prefix}help\` for a list of commands.`)
 
     const commandFunction = require(`./commands/${commandIndex}`)
     commandFunction()
