@@ -32,7 +32,7 @@ Client.on("messageCreate", (message) => {
         return message.channel.send(`Invalid command \`${cmd}\`. Please use \`${BotConfig.prefix}help\` for a list of commands.`)
 
     const commandFunction = require(`./commands/${commandIndex}`)
-    commandFunction()
+    commandFunction(Client, message, args, cmd)
 })
 
 Client.login(BotConfig.token)
