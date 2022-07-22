@@ -21,10 +21,7 @@ Client.on("ready", () => {
 
 Client.on("messageCreate", (message) => {
     if (message.author.bot) return
-    if (!message.content.startsWith(BotConfig.prefix)) {
-        console.log(message.content)
-        return
-    }
+    if (!message.content.startsWith(BotConfig.prefix)) return
 
     const args = message.content.trim().split(/ +/g)
     const cmd = args[0].slice(BotConfig.prefix.length).toLowerCase()
