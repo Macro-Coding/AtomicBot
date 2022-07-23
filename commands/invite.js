@@ -1,5 +1,13 @@
 const checkCommandParameterTypes = require("../lib/methods/checkCommandParameterTypes")
+const botConfig = require("../config.json")
 
-module.exports = (client, message, args, cmd) => {
-    const parameterChecks = checkCommandParameterTypes(client, message, args, cmd)
+module.exports = {
+    Name: "invite",
+    Usage: `${botConfig.prefix}invite`,
+    Arguments: "",
+    Type: "Utility",
+    Permissions: [],
+    Invoke(client, message, args, cmd) {
+
+    }
 }
