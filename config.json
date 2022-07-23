@@ -1,4 +1,12 @@
 {
     "token": "",
-    "prefix": "a!"
+    "prefix": "a!",
+    "intents": [
+        "Guilds",
+        "GuildMessages",
+        "GuildEmojisAndStickers",
+        "DirectMessageReactions",
+        "GuildBans",
+        "MessageContent"
+    ]
 }
