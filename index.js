@@ -16,7 +16,7 @@ for (var file of CommandFiles) {
 }
 
 Client.on("ready", () => {
-    Client.user.setActivity("a!help");
+    Client.user.setPresence({ activities: [{ name: "a!help" }], status: "online" });
     console.log(`${Client.user.username} is now online.`)
 })
 
