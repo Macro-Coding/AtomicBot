@@ -3,7 +3,7 @@ const BotConfig = require("../config.json")
 
 module.exports = {
     Name: "purge",
-    Usage: `${BotConfig.prefix}purge <msgCount>`,
+    Usage: `${BotConfig.prefix}purge <msgCount (0-100)>`,
     Arguments: "<msgCount>",
     Type: "Moderation",
     Permissions: [
