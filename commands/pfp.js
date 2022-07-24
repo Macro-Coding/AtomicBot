@@ -4,7 +4,7 @@ const botConfig = require("../config.json")
 
 module.exports = {
     Name: "pfp",
-    Usage: `${botConfig.prefix}pfp`,
+    Usage: `${botConfig.prefix}pfp <user>`,
     Arguments: "<@user>",
     Type: "Utility",
     Permissions: [],
