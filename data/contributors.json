@@ -1,22 +1,27 @@
 [
     {
         "name": "Maxx#9821",
+        "discordId": 949801871197995008,
         "role": "Creator"
     },
     {
         "name": "rust#7643",
+        "discordId": 472530726613549066,
         "role": "Lead Programmer"
     },
     {
         "name": "Lucas_26#4403",
+        "discordId": 990100604133179472,
         "role": "Programmer, Designer"
     },
     {
         "name": "AceTheFox#4138",
+        "discordId": 869282965006479421,
         "role": "Support Admin"
     },
     {
         "name": "AryanTripathi#1313",
+        "discordId": 855668817173544980,
         "role": "Support Moderator"
     }
 ]
