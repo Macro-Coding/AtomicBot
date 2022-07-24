@@ -1,6 +1,5 @@
 const { EmbedBuilder, Embed } = require('discord.js');
 const fs = require("fs")
-const checkCommandParameterTypes = require("../lib/methods/checkCommandParameterTypes")
 const botConfig = require("../config.json")
 const Contributors = require("../data/contributors.json")
 
@@ -23,9 +22,10 @@ const Embeds = {
         .addFields(
             { name: "Commands", value: `Use \`${botConfig.prefix}help commands\` for a list of commands`, inline: true },
             { name: "Credits", value: `Use \`${botConfig.prefix}help credits\` for the credits.`, inline: true },
-            { name: "Macro Coding Discord", value: "https://discord.gg/u5WeVyhDmu" },
-            { name: "Macro Coding Github", value: "https://github.com/Macro-Coding" }
-        ),
+            { name: "Macro Coding Discord", value: "[Discord](https://discord.gg/u5WeVyhDmu)" },
+            { name: "Macro Coding Github", value: "[Github](https://github.com/Macro-Coding)" }
+        )
+        .setImage("https://media.discordapp.net/attachments/1000503580282867793/1000784830700724274/standard_9.gif"),
     commands: new EmbedBuilder()
         .setTitle("Atomic - Commands")
         .addFields(CommandFields)
@@ -55,7 +55,8 @@ module.exports = {
     Invoke(client, message, args, cmd) {
         const helpSection = args[1]
         const embed = Embeds[helpSection]
-        if (!helpSection) SendDefault(message)
+
+        if (!helpSection) return SendDefault(message)
         if (!embed) return message.channel.send(`Invalid help section. Please use \`${botConfig.prefix}help\`.`)
 
         message.channel.send({
