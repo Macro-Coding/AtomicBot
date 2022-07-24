@@ -1,6 +1,18 @@
 const { EmbedBuilder } = require('discord.js');
-const checkCommandParameterTypes = require("../lib/methods/checkCommandParameterTypes")
 const botConfig = require("../config.json")
+
+const ShowInfoEmbed = (user) => {
+    return new EmbedBuilder()
+        .setTitle(`Info for ${user.username}`)
+        .setThumbnail(user.displayAvatarURL())
+        .addFields(
+            { name: "Username", value: String(user.username) },
+            { name: "Id", value: String(user.id) },
+            { name: "Created", value: String(user.createdAt) },
+            { name: "Bot", value: String(user.bot) }
+        )
+        .setColor("Aqua")
+}
 
 module.exports = {
     Name: "userinfo",
@@ -10,24 +22,13 @@ module.exports = {
     Permissions: [],
     Invoke(client, message, args, cmd) {
         const userArg = message.mentions.members.first()
-        if (!userArg) return message.channel.send("Please ping a user that you'd like to see the info of.")
+        if (!userArg) return message.channel.send({
+            embeds: [ShowInfoEmbed(message.author)]
+        })
 
         const user = userArg.user
 
-        const infoEmbed = new EmbedBuilder()
-        infoEmbed.setTitle(`Info for ${user.username}`)
-        infoEmbed.setImage(user.displayAvatarURL())
-        infoEmbed.setDescription(`
-        Bot: ${user.bot}
-        Id: ${user.id}
-        Account Created: ${user.createdAt.replace("GMT-0500 (Central Daylight Time)", "")}`)
-        /*
-        infoEmbed.addFields(
-            { name: "Bot", value: user.bot, inline: true },
-            { name: "Id", value: user.id, inline: true },
-            { name: "Account Created", value: user.createdAt, inline: true }
-        )
-        */
+        const infoEmbed = ShowInfoEmbed(user)
         return message.channel.send({
             embeds: [infoEmbed]
         })
