@@ -1,5 +1,6 @@
 const checkCommandParameterTypes = require("../lib/methods/checkCommandParameterTypes")
 const botConfig = require("../config.json")
+const replies = ["Yes, for sure!", "Yeah I think so", "idk", "No, god no", "Nope definitely not"]
 
 module.exports = {
   Name: "8ball",
@@ -8,7 +9,10 @@ module.exports = {
   Type: "Utility",
   Permissions: [],
   Invoke(client, message, args, cmd) {
-    const replies = ["Yes, for sure!", "Yeah I think so", "idk", "No, god no", "Nope definitely not"]
-    return message.reply(replies[Math.floor(Math.random() * arr.length)])
+    const question = args[1]
+    if (!question) return message.reply("Please ask me something!")
+
+    const randomNumber = Math.floor(Math.random() * replies.length)
+    return message.reply(replies[randomNumber])
   }
 }
