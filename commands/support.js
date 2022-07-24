@@ -14,6 +14,7 @@ module.exports = {
             { name: "Invite Atomic", value: `[Invite](${botConfig.invite})`, inline: true },
             { name: "Support Server", value: "[Join](https://discord.gg/SEP74J3QHw)", inline: true }
         )
+        supportEmbed.setColor("Aqua")
 
         return message.channel.send({ embeds: [supportEmbed] })
     }
