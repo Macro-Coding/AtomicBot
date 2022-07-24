@@ -23,7 +23,15 @@ const Embeds = {
     commands: new EmbedBuilder()
         .setTitle("Atomic - Commands")
         .addFields(Fields)
+        .setColor("Blue"),
+    credits: new EmbedBuilder()
+        .setTitle("Atomic - Credits")
+        .setDescription("Atomic was made with the help of the following people.")
         .setColor("Blue")
+        .addFields(
+            { name: "Maxx#9821", value: "Creator", inline: true },
+            { name: "rust#7643", value: "Programmer", inline: true }
+        )
 }
 
 const SendDefault = (message) => {
