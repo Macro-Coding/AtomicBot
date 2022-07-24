@@ -18,7 +18,9 @@ const Embeds = {
         .setColor("Blue")
         .addFields(
             { name: "Commands", value: `Use \`${botConfig.prefix}help commands\` for a list of commands`, inline: true },
-            { name: "Credits", value: `Use \`${botConfig.prefix}help credits\` for the credits.`, inline: true }
+            { name: "Credits", value: `Use \`${botConfig.prefix}help credits\` for the credits.`, inline: true },
+            { name: "Macro Coding Discord", value: "https://discord.gg/u5WeVyhDmu" },
+            { name: "Macro Coding Github", value: "https://github.com/Macro-Coding" }
         ),
     commands: new EmbedBuilder()
         .setTitle("Atomic - Commands")
@@ -29,9 +31,15 @@ const Embeds = {
         .setDescription("Atomic was made with the help of the following people.")
         .setColor("Blue")
         .addFields(
-            { name: "Maxx#9821", value: "Creator", inline: true },
-            { name: "rust#7643", value: "Programmer", inline: true }
+            { name: "Maxx#9821", value: "Creator, Programmer", inline: true },
+            { name: "rust#7643", value: "Lead Programmer", inline: true },
+            { name: "Lucas_26#4403", value: "Programmer, Designer", inline: true },
+            { name: "AceTheFox#4138", value: "Support Admin", inline: true },
+            { name: "AryanTripathi#1313", value: "Support Moderator", inline: true }
         )
+        .setFooter({
+            text: "Created by Macro Coding"
+        })
 }
 
 const SendDefault = (message) => {
