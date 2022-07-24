@@ -55,7 +55,8 @@ module.exports = {
     Invoke(client, message, args, cmd) {
         const helpSection = args[1]
         const embed = Embeds[helpSection]
-        if (!helpSection || !embed) SendDefault(message)
+        if (!helpSection) SendDefault(message)
+        if (!embed) return message.channel.send(`Invalid help section. Please use \`${botConfig.prefix}help\`.`)
 
         message.channel.send({
             embeds: [embed]
