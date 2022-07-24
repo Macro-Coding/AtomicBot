@@ -5,7 +5,6 @@ const botConfig = require("../config.json")
 
 const Commands = fs.readdirSync(__dirname).filter(command => command !== "help.js" && command.endsWith(".js"))
 
-console.log(Commands)
 const Fields = Commands.map(command => {
     const info = require(`./${command}`)
     return { name: info.Name || "Unknown", value: `Usage: ${info.Usage || ""}` }
