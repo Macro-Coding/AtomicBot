@@ -21,7 +21,6 @@ Client.on("ready", () => {
 })
 
 Client.on("messageCreate", (message) => {
-    Client.user.setActivity("a!help");
     if (message.author.bot) return
     if (!message.content.startsWith(BotConfig.prefix)) return
 
