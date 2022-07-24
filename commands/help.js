@@ -11,7 +11,7 @@ const CommandFields = Commands.map(command => {
     return { name: info.Name || "Unknown", value: `Usage: \`${info.Usage || ""}\`` }
 })
 
-const ContributorFields = Object.values(Contributors).map(contributor => {
+const ContributorFields = Contributors.map(contributor => {
     return { name: contributor.name, value: contributor.role, inline: true }
 })
 
