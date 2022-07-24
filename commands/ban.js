@@ -26,8 +26,8 @@ module.exports = {
             .setColor("DarkRed")
             .setTimestamp()
             .addFields(
-                { name: "Invoked by", value: author.username },
-                { name: "Reason", value: reason }
+                { name: "Invoked by", value: String(author.user.tag), inline: true },
+                { name: "Reason", value: String(reason), inline: true }
             )
 
         return message.channel.send({
