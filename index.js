@@ -16,10 +16,12 @@ for (var file of CommandFiles) {
 }
 
 Client.on("ready", () => {
+    Client.user.setActivity("a!help");
     console.log(`${Client.user.username} is now online.`)
 })
 
 Client.on("messageCreate", (message) => {
+    Client.user.setActivity("a!help");
     if (message.author.bot) return
     if (!message.content.startsWith(BotConfig.prefix)) return
 
