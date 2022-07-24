@@ -1,19 +1,48 @@
+const { EmbedBuilder, Embed } = require('discord.js');
+const fs = require("fs")
 const checkCommandParameterTypes = require("../lib/methods/checkCommandParameterTypes")
 const botConfig = require("../config.json")
 
+const Commands = fs.readdirSync(__dirname).filter(command => command.endsWith(".js"))
+const Fields = Commands.map(command => {
+    const info = require(`./${command}`)
+    return { name: info.Name || "Unknown!", value: `Usage: ${info.Usage || ""}` }
+})
+
+const Embeds = {
+    index: new EmbedBuilder()
+        .setTitle("Atomic")
+        .setDescription("Atomic is a Discord bot that utilises utility, moderation, and fun commands that you can use in your Discord server.")
+        .setColor("Blue")
+        .addFields(
+            { name: "Commands", value: `Use \`${botConfig.prefix}help commands\` for a list of commands`, inline: true },
+            { name: "Credits", value: `Use \`${botConfig.prefix}help credits\` for the credits.`, inline: true }
+        ),
+    commands: new EmbedBuilder()
+        .setTitle("Atomic - Commands")
+        .addFields(Fields)
+        .setColor("Blue")
+}
+
+const SendDefault = (message) => {
+    return message.channel.send({
+        embeds: [Embeds.index]
+    })
+}
+
 module.exports = {
     Name: "help",
-    Usage: `${botConfig.prefix}help`,
-    Arguments: "",
+    Usage: `${botConfig.prefix}help <?section>`,
+    Arguments: "<?section>",
     Type: "Utility",
     Permissions: [],
     Invoke(client, message, args, cmd) {
-        const { EmbedBuilder } = require('discord.js');
-        const exampleEmbed = new EmbedBuilder()
-        exampleEmbed.setTitle('Commands')
-        exampleEmbed.setDescription('Hia, my prefix is `a!` and i was made by Maxx with help from Edge Tech Coder and Rust (extreme credit to everyone in the Programming  Hero discord server), AceTheFox and many many others! Run a!setup to get started, you can also make a channel called #online to get updates when the bot comes online! My commands are:```js \n a!invite ✅  \n a!kick ❌ \n a!ban ❌ \n a!mute ❌ \n a!poll ❌ \n a!ann (announcement command by the way) ❌ \n a!8ball ❌ \n a!rrcreate <msg id> <emoji> <role> ❌ \n a!userinfo ✅ \n a!pfp ✅ \n a!membercount ✅```');
+        const helpSection = args[1]
+        const embed = Embeds[helpSection]
+        if (!helpSection || !embed) SendDefault(message)
+
         message.channel.send({
-            embeds: [exampleEmbed]
+            embeds: [embed]
         })
     }
 }
