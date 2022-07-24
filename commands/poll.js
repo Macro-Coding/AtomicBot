@@ -8,6 +8,16 @@ const NumberEmojis = [
     "4️⃣"
 ]
 
+const GetAnswerFields = (answers) => {
+    const fields = Object.keys(answers).map(key => {
+        const value = answers[key]
+        if (value) return { name: `Option ${key}`, value: value, inline: true }
+    })
+
+    console.log(fields)
+    return fields
+}
+
 module.exports = {
     Name: "poll",
     Usage: `${botConfig.prefix}poll <title> <a1> <a2> <?a3> <?a4>`,
@@ -30,6 +40,7 @@ module.exports = {
             .setTitle(`Poll - ${title}`)
             .setTimestamp()
             .setDescription(`Created by ${message.author.tag}`)
+            .addFields(GetAnswerFields(Answers))
 
         message.delete()
 
