@@ -2,12 +2,17 @@ const { EmbedBuilder, Embed } = require('discord.js');
 const fs = require("fs")
 const checkCommandParameterTypes = require("../lib/methods/checkCommandParameterTypes")
 const botConfig = require("../config.json")
+const Contributors = require("../data/contributors.json")
 
 const Commands = fs.readdirSync(__dirname).filter(command => command !== "help.js" && command.endsWith(".js"))
 
-const Fields = Commands.map(command => {
+const CommandFields = Commands.map(command => {
     const info = require(`./${command}`)
     return { name: info.Name || "Unknown", value: `Usage: \`${info.Usage || ""}\`` }
+})
+
+const ContributorFields = Object.values(Contributors).map(contributor => {
+    return { name: contributor.name, value: contributor.role, inline: true }
 })
 
 const Embeds = {
@@ -23,19 +28,13 @@ const Embeds = {
         ),
     commands: new EmbedBuilder()
         .setTitle("Atomic - Commands")
-        .addFields(Fields)
+        .addFields(CommandFields)
         .setColor("Blue"),
     credits: new EmbedBuilder()
         .setTitle("Atomic - Credits")
         .setDescription("Atomic was made with the help of the following people.")
         .setColor("Blue")
-        .addFields(
-            { name: "Maxx#9821", value: "Creator, Programmer", inline: true },
-            { name: "rust#7643", value: "Lead Programmer", inline: true },
-            { name: "Lucas_26#4403", value: "Programmer, Designer", inline: true },
-            { name: "AceTheFox#4138", value: "Support Admin", inline: true },
-            { name: "AryanTripathi#1313", value: "Support Moderator", inline: true }
-        )
+        .addFields(ContributorFields)
         .setFooter({
             text: "Created by Macro Coding"
         })
