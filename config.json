@@ -2,6 +2,7 @@
     "token": "OTk5NTEyNDQ4NzM2NDMyMTg5.GK6Nwl.rk3FiXUmze9sKcxWQpjkNM2Kg92J1k5PzlL_cM",
     "prefix": "a!",
     "invite": "https://discord.com/api/oauth2/authorize?client_id=999512448736432189&permissions=8&scope=bot",
+    "messagesChannel": 1000949368519675995,
     "intents": [
         "Guilds",
         "GuildMessages",
