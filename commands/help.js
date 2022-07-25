@@ -40,7 +40,9 @@ const Embeds = {
         }),
     premium: new EmbedBuilder()
         .setTitle("Atomic - Nuclear (Premium)")
-}
+        .setColor("Blue")
+        .setDescription("Wanna see what were doing next? Introducing Atomic (Premium)  code named Nuclear! What can you expect from Nuclear? \n reaction roles, \n mute commands, \n automoderation \n and more \nMake sure you join Macro Coding to get updates about progress in current projects!")
+        
 
 const SendDefault = (message) => {
     return message.channel.send({
