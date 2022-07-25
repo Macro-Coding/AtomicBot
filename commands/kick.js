@@ -11,7 +11,7 @@ module.exports = {
     ],
     Invoke(client, message, args, cmd) {
         const author = message.member
-        const reason = args[2] || "Not specified"
+        const reason = args.slice(2).join(" ")
         if (!author.permissions.has(this.Permissions))
             return message.channel.send("You do not have permission to use a!kick. Missing `KICK_MEMBERS`")
 
