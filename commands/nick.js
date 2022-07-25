@@ -3,8 +3,8 @@ const botConfig = require("../config.json")
 
 module.exports = {
     Name: "nick",
-    Usage: `${botConfig.prefix}nick <nickname>`,
-    Arguments: "<nickname>",
+    Usage: `${botConfig.prefix}nick <user> <nickname>`,
+    Arguments: "<user> <nickname>",
     Type: "Utility",
     Permissions: [
         DiscordJS.PermissionFlagsBits.ManageNicknames
