@@ -19,7 +19,10 @@ module.exports = {
         if (nickname.length > 30)
             return message.channel.send("Nickname is too long. Max nickname length is 30.")
 
-        member.setNickname(nickname)
-        return message.channel.send(`Set nickname to \`${nickname}\``)
+        member.setNickname(nickname).then(() => {
+            return message.channel.send(`Changed nickname to \`${nickname}\``)
+        }).catch(err => {
+            return message.channel.send("I am not allowed to set your nickname.")
+        })
     }
 }
