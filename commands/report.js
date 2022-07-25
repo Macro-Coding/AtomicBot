@@ -9,32 +9,31 @@ module.exports = {
     Permissions: [],
     Invoke(client, message, args, cmd) {
         const reportMessage = args.slice(1).join(" ")
+        const messageChannel = client.channels.cache.find(channel => channel.id == BotConfig.messagesChannel)
 
-        message.guild.channels.fetch(BotConfig.messagesChannel).then(channel => {
-            message.delete()
+        message.delete()
 
-            const SentMessageEmbed = new DiscordJS.EmbedBuilder()
-                .setTitle("Sent Message")
-                .setDescription(`\`${reportMessage}\``)
-                .setColor("Aqua")
-                .setFooter({
-                    text: "Thanks for helping improve Atomic!"
-                })
-                .setTimestamp()
-
-            const MessageEmbed = new DiscordJS.EmbedBuilder()
-                .setTitle(`Message from ${message.author.tag}`)
-                .setDescription(reportMessage)
-                .setColor("DarkRed")
-                .setTimestamp()
-
-            channel.send({
-                embeds: [MessageEmbed]
+        const SentMessageEmbed = new DiscordJS.EmbedBuilder()
+            .setTitle("Sent Message")
+            .setDescription(`\`${reportMessage}\``)
+            .setColor("Aqua")
+            .setFooter({
+                text: "Thanks for helping improve Atomic!"
             })
+            .setTimestamp()
 
-            message.channel.send({
-                embeds: [SentMessageEmbed]
-            })
+        const MessageEmbed = new DiscordJS.EmbedBuilder()
+            .setTitle(`Message from ${message.author.tag}`)
+            .setDescription(reportMessage)
+            .setColor("DarkRed")
+            .setTimestamp()
+
+        messageChannel.send({
+            embeds: [MessageEmbed]
+        })
+
+        message.channel.send({
+            embeds: [SentMessageEmbed]
         })
     }
 }
