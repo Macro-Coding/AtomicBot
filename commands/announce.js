@@ -14,7 +14,6 @@ module.exports = {
         const description = args.shift().shift().join(" ")
         if (!title || !channel || !description)
             return message.channel.send("Announcement must have a title a channel and description.")
-        console.log(channelMentionToId(channel))
 
         const AnnEmbed = new EmbedBuilder()
             .setTitle(`Announcement - ${title}`)
