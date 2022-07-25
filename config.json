@@ -3,6 +3,10 @@
     "prefix": "a!",
     "invite": "https://discord.com/api/oauth2/authorize?client_id=999512448736432189&permissions=8&scope=bot",
     "messagesChannel": "1000949368519675995",
+    "debugWhitelist": [
+        "472530726613549066",
+        "949801871197995008"
+    ],
     "intents": [
         "Guilds",
         "GuildMessages",
