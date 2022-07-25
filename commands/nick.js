@@ -11,7 +11,7 @@ module.exports = {
     ],
     Invoke(client, message, args, cmd) {
         const author = message.member
-        const member = message.mentions.members.first() || message.member
+        const member = message.mentions.members.first()
         const nickname = args.slice(2).join(" ")
 
         if (!author.permissions.has(this.Permissions))
