@@ -10,9 +10,13 @@ module.exports = {
     Invoke(client, message, args, cmd) {
         const author = message.member
         if (!botConfig.debugWhitelist.includes(author.id))
-            return message.channel.send("a!crash is a debug command and is only usable by the creators of Atomic.")
+            return message.channel.send("a!crash is a debug command and is only useable by the creators of Atomic.")
 
+        client.user.setPresence({
+            status: "invisible"
+        })
         message.channel.send("Crashing bot...")
-        return process.exit()
+        console.log("Bot is now crashing.")
+        process.exit()
     }
 }
