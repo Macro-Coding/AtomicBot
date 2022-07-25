@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require("discord.js")
+const { EmbedBuilder, PermissionFlagsBits } = require("discord.js")
 const botConfig = require("../config.json")
 const channelMentionToId = require("../lib/methods/channelMentionToId")
 
@@ -7,8 +7,14 @@ module.exports = {
     Usage: `${botConfig.prefix}announce <title> <channel> <announcement>`,
     Arguments: "<title> <channel> <announcement>",
     Type: "Utility",
-    Permissions: [],
+    Permissions: [
+        PermissionFlagsBits.ManageMessages
+    ],
     Invoke(client, message, args, cmd) {
+        const author = message.member
+        if (!author.permissions.has(this.Permissions))
+            return message.channel.send("You do not have permission to use that command. Missing `MANAGE_MESSAGES`")
+
         const title = args[1]
         const channel = args[2]
         const description = args.slice(3).join(" ")
