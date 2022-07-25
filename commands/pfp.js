@@ -6,7 +6,7 @@ module.exports = {
     Name: "pfp",
     Usage: `${botConfig.prefix}pfp <user>`,
     Arguments: "<@user>",
-    Type: "Utility",
+    Type: "Fun",
     Permissions: [],
     Invoke(client, message, args, cmd) {
         const member = message.mentions.members.first();

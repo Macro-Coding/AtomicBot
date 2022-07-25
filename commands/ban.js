@@ -5,7 +5,8 @@ module.exports = {
     Name: "ban",
     Usage: `${BotConfig.prefix}ban <user> <?reason>`,
     Arguments: "<user> <?reason>",
-    Type: "Moderation", Permissions: [
+    Type: "Moderation",
+    Permissions: [
         DiscordJS.PermissionFlagsBits.BanMembers
     ],
     Invoke(client, message, args, cmd) {

@@ -6,7 +6,7 @@ module.exports = {
   Name: "8ball",
   Usage: `${botConfig.prefix}8ball`,
   Arguments: "",
-  Type: "Utility",
+  Type: "Fun",
   Permissions: [],
   Invoke(client, message, args, cmd) {
     const question = args[1]
