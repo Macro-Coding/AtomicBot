@@ -41,8 +41,13 @@ const Embeds = {
     premium: new EmbedBuilder()
         .setTitle("Atomic - Nuclear (Premium)")
         .setColor("Blue")
-        .setDescription("Wanna see what were doing next? Introducing Atomic (Premium)  code named Nuclear! What can you expect from Nuclear? \n reaction roles, \n mute commands, \n automoderation \n and more \nMake sure you join Macro Coding to get updates about progress in current projects!")
-        
+        .setDescription("Nuclear is the premium version of Atomic. With Nuclear, you will have the ability to")
+        .addFields(
+            { name: "Create reaction roles", value: "With Nuclear, you will be able to create reaction roles", inline: true },
+            { name: "Mute command", value: "With Nuclear, you can also use the a!mute command", inline: true },
+            { name: "Automod", value: "With Nuclear, you will be able to set up automod for your server", inline: true }
+        )
+}
 
 const SendDefault = (message) => {
     return message.channel.send({
