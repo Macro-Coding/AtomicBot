@@ -11,7 +11,8 @@ module.exports = {
     Invoke(client, message, args, cmd) {
         const title = args[1]
         const channel = args[2]
-        const description = args.shift().shift().join(" ")
+        const description = args.slice(2).join(" ")
+        console.log(description)
         if (!title || !channel || !description)
             return message.channel.send("Announcement must have a title a channel and description.")
 
