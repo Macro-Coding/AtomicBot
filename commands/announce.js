@@ -4,7 +4,7 @@ const channelMentionToId = require("../lib/methods/channelMentionToId")
 
 module.exports = {
     Name: "announce",
-    Usage: `${botConfig.prefix}announce <title>\\<channel>\\ <announcement>`,
+    Usage: `${botConfig.prefix}announce <title> <channel> <announcement>`,
     Arguments: "<title> <channel> <announcement>",
     Type: "Utility",
     Permissions: [],
