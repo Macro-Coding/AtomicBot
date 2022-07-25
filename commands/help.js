@@ -37,7 +37,9 @@ const Embeds = {
         .addFields(ContributorFields)
         .setFooter({
             text: "Created by Macro Coding"
-        })
+        }),
+    premium: new EmbedBuilder()
+        .setTitle("Atomic - Nuclear (Premium)")
 }
 
 const SendDefault = (message) => {
