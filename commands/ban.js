@@ -20,19 +20,22 @@ module.exports = {
 
         member.ban({
             reason: reason
-        })
+        }).then(() => {
+            const BanEmbed = new DiscordJS.EmbedBuilder()
+                .setTitle("Ban")
+                .setColor("DarkRed")
+                .setTimestamp()
+                .addFields(
+                    { name: "Invoked by", value: String(author.user.tag), inline: true },
+                    { name: "Reason", value: String(reason), inline: true }
+                )
 
-        const BanEmbed = new DiscordJS.EmbedBuilder()
-            .setTitle("Ban")
-            .setColor("DarkRed")
-            .setTimestamp()
-            .addFields(
-                { name: "Invoked by", value: String(author.user.tag), inline: true },
-                { name: "Reason", value: String(reason), inline: true }
-            )
-
-        return message.channel.send({
-            embeds: [BanEmbed]
+            message.channel.send({
+                embeds: [BanEmbed]
+            })
+        }).catch(err => {
+            console.log(err)
+            message.channel.send("I am not allowed to ban that person.")
         })
     }
 }
