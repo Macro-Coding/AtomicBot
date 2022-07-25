@@ -21,19 +21,24 @@ Client.on("ready", () => {
 })
 
 Client.on("messageCreate", (message) => {
-    if (message.author.bot) return
-    if (!message.content.startsWith(BotConfig.prefix)) return
+    try {
+        if (message.author.bot) return
+        if (!message.content.startsWith(BotConfig.prefix)) return
 
-    const args = message.content.trim().split(/ +/g)
-    const cmd = args[0].slice(BotConfig.prefix.length).toLowerCase()
+        const args = message.content.trim().split(/ +/g)
+        const cmd = args[0].slice(BotConfig.prefix.length).toLowerCase()
 
-    const commandIndex = Commands[cmd]
+        const commandIndex = Commands[cmd]
 
-    if (!commandIndex)
-        return message.channel.send(`Invalid command \`${cmd}\`. Please use \`${BotConfig.prefix}help\` for a list of commands.`)
+        if (!commandIndex)
+            return message.channel.send(`Invalid command \`${cmd}\`. Please use \`${BotConfig.prefix}help\` for a list of commands.`)
 
-    const commandData = require(`./commands/${commandIndex}`)
-    commandData.Invoke(Client, message, args, cmd)
+        const commandData = require(`./commands/${commandIndex}`)
+        commandData.Invoke(Client, message, args, cmd)
+    } catch (err) {
+        console.log(err)
+        message.channel.send("An error occured in runtime.")
+    }
 })
 
 Client.login(BotConfig.token)
