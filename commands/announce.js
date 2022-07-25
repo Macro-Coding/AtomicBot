@@ -11,10 +11,10 @@ module.exports = {
     Invoke(client, message, args, cmd) {
         const title = args[1]
         const channel = args[2]
-        const description = args.slice(2).join(" ")
-        console.log(description)
+        const description = args.slice(3).join(" ")
+
         if (!title || !channel || !description)
-            return message.channel.send("Announcement must have a title a channel and description.")
+            return message.channel.send("Announcement must have a title, channel, and description.")
 
         const AnnEmbed = new EmbedBuilder()
             .setTitle(`Announcement - ${title}`)
@@ -27,8 +27,23 @@ module.exports = {
 
         message.guild.channels.fetch(channelMentionToId(channel)).then(channel => {
             message.delete()
+
+            const NoticeEmbed = new EmbedBuilder()
+                .setTitle("Announcement Sent")
+                .setDescription(description)
+                .setColor("Aqua")
+                .setTimestamp()
+
             channel.send({
                 embeds: [AnnEmbed]
+            }).then(msg => {
+                NoticeEmbed.addFields(
+                    { name: "Message", value: `[Jump](${msg.url})` }
+                )
+
+                message.channel.send({
+                    embeds: [NoticeEmbed]
+                })
             })
         }).catch(err => {
             console.log(err)
