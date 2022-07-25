@@ -11,23 +11,28 @@ module.exports = {
     Invoke(client, message, args, cmd) {
         const title = args[1]
         const channel = args[2]
-        const description = args
+        const description = args.shift().shift().join(" ")
         if (!title || !channel || !description)
             return message.channel.send("Announcement must have a title a channel and description.")
-
-        const TargetChannel = message.guild.channels.cache.get(channelMentionToId(channel))
-        console.log(TargetChannel.id)
-        if (!TargetChannel) return message.channel.send("Invalid channel.")
+        console.log(channelMentionToId(channel))
 
         const AnnEmbed = new EmbedBuilder()
             .setTitle(`Announcement - ${title}`)
             .setTimestamp()
             .setColor("Aqua")
-            .setDescription(`Created by ${message.author.tag} \n ${description[2]}`)
+            .addFields(
+                { name: "Created by", value: message.author.tag, inline: true },
+                { name: "Description", value: description, inline: true }
+            )
 
-        message.delete() //Ann = abreviation for announcement
-        return TargetChannel.send({
-            embeds: [AnnEmbed]
+        message.guild.channels.fetch(channelMentionToId(channel)).then(channel => {
+            message.delete()
+            channel.send({
+                embeds: [AnnEmbed]
+            })
+        }).catch(err => {
+            console.log(err)
+            message.channel.send("Invalid channel.")
         })
     }
 }
