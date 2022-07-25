@@ -7,7 +7,7 @@ const Commands = fs.readdirSync(__dirname).filter(command => command !== "help.j
 
 const CommandFields = Commands.map(command => {
     const info = require(`./${command}`)
-    return { name: info.Name || "Unknown", value: `Usage: \`${info.Usage || ""}\`` }
+    return { name: info.Name || "Unknown", value: `Usage: \`${info.Usage || ""}\``, inline: true }
 })
 
 const ContributorFields = Contributors.map(contributor => {
