@@ -12,10 +12,11 @@ module.exports = {
         if (!botConfig.debugWhitelist.includes(author.id))
             return message.channel.send("a!crash is a debug command and is only useable by the creators of Atomic.")
 
-        client.user.setPresence({
-            status: "invisible"
-        })
-        message.channel.send("Crashing bot...")
+        client.user.setActivity("Crashed", {
+            type: "STREAMING",
+            url: "https://discord.com"
+        });
+
         console.log("Bot is now crashing.")
         process.exit()
     }
