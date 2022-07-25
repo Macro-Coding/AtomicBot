@@ -20,8 +20,9 @@ const Embeds = {
         .setDescription("Atomic is a Discord bot that utilises utility, moderation, and fun commands that you can use in your Discord server.")
         .setColor("Blue")
         .addFields(
-            { name: "Commands", value: `Use \`${botConfig.prefix}help commands\` for a list of commands`, inline: true },
+            { name: "Commands", value: `Use \`${botConfig.prefix}help commands\` for a list of commands.`, inline: true },
             { name: "Credits", value: `Use \`${botConfig.prefix}help credits\` for the credits.`, inline: true },
+            { name: "Premium", value: `Use \`${botConfig.prefix}help premium\` to explore premium.`, inline: true },
             { name: "Macro Coding Discord", value: "[Discord](https://discord.gg/u5WeVyhDmu)" },
             { name: "Macro Coding Github", value: "[Github](https://github.com/Macro-Coding)" }
         )
