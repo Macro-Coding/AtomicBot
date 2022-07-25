@@ -21,6 +21,5 @@ module.exports = {
         description[1].send({
             embeds: [AnnEmbed]
         })
-    })
-  }
+    }
 }
