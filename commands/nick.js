@@ -7,14 +7,18 @@ module.exports = {
     Arguments: "<nickname>",
     Type: "Utility",
     Permissions: [
-        DiscordJS.PermissionFlagsBits.ChangeNickname
+        DiscordJS.PermissionFlagsBits.ManageNicknames
     ],
     Invoke(client, message, args, cmd) {
-        const member = message.member
-        const nickname = args.slice(1).join(" ")
+        const author = message.member
+        const member = message.mentions.members.first() || message.member
+        const nickname = args.slice(2).join(" ")
 
-        if (!member.permissions.has(this.Permissions))
-            return message.channel.send("You do not have permission to use that. Missing `CHANGE_NICKNAME`")
+        if (!author.permissions.has(this.Permissions))
+            return message.channel.send("You do not have permission to use that. Missing `MANAGE_NICKNAMES`")
+
+        if (!member)
+            return message.channel.send("Please mention a user.")
 
         if (nickname.length > 30)
             return message.channel.send("Nickname is too long. Max nickname length is 30.")
@@ -22,7 +26,7 @@ module.exports = {
         member.setNickname(nickname).then(() => {
             return message.channel.send(`Changed nickname to \`${nickname}\``)
         }).catch(err => {
-            return message.channel.send("I am not allowed to set your nickname.")
+            return message.channel.send("I am not allowed to set that user's nickname.")
         })
     }
 }
