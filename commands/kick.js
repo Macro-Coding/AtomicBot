@@ -18,6 +18,11 @@ module.exports = {
         const member = message.mentions.members.first()
         if (!member) return message.channel.send("❌ Please mention a user.")
 
-        member.kick(reason)
+        member.kick(reason).then(() => {
+            message.channel.send(`Kicked for ${reason}`)
+        }).catch(err => {
+            message.channel.send("I am not allowed to kick that person.")
+            console.log(err)
+        })
     }
 }
