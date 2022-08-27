@@ -15,12 +15,14 @@ for (var file of CommandFiles) { Commands[file.replace(".js", "")] = file.toLowe
 Client.on("ready", () => {
     Client.user.setPresence({ activities: [{ name: "a!help" }], status: "online" });
     console.log(`${Client.user.username} is now online.`)
-}) Client.on("messageCreate", (message) => {
+}) 
+Client.on("messageCreate", (message) => {
     try {
         if (message.author.bot) return
         if (!message.content.startsWith(BotConfig.prefix)) return console.log(`${message.author.tag} in ${message.guild} in ${message.channel.name}: ${message.content}`)
         const args = message.content.trim()
-            .split(/ +/g) const cmd = args[0].slice(BotConfig.prefix.length)
+            .split(/ +/g) 
+            const cmd = args[0].slice(BotConfig.prefix.length)
                 .toLowerCase()
 
         const commandIndex = Commands[cmd]
