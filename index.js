@@ -3,7 +3,6 @@ const DiscordJS = require("discord.js");
 const BotConfig = require("./config.json")
 const FS = require("fs")
 const Path = require("path")
-
 /* Variables */
 const Client = new DiscordJS.Client({ intents: BotConfig.intents })
 const Commands = new Object()
