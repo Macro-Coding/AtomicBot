@@ -14,6 +14,7 @@ for (var file of CommandFiles) { Commands[file.replace(".js", "")] = file.toLowe
 Client.on("ready", () => {
     Client.user.setPresence({ activities: [{ name: "a!help" }], status: "online" });
     console.log(`${Client.user.username} is now online.`)
+    console.log(`Make Sure To Use "node index.js > ./data/AtomicConsoleLogs.txt" to log all actions made by users for further review.`)
 }) 
 Client.on("messageCreate", (message) => {
     try {

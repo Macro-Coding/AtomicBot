@@ -25,7 +25,8 @@ const Embeds = {
             { name: "Credits", value: `Use \`${botConfig.prefix}help credits\` for the credits.`, inline: true },
             { name: "Premium", value: `Use \`${botConfig.prefix}help premium\` to explore premium.`, inline: true },
             { name: "Macro Coding Discord", value: "[Discord](https://discord.gg/u5WeVyhDmu)" },
-            { name: "Macro Coding Github", value: "[Github](https://github.com/Macro-Coding)" }
+            { name: "Macro Coding Github", value: "[Github](https://github.com/Macro-Coding)" },
+            { name: "Bot Commands Website (powered by Heroku)", value: "[Commands](https://atomic-commands.herokuapp.com)"}
         )
         .setImage("https://media.discordapp.net/attachments/1000503580282867793/1000784830700724274/standard_9.gif"),
     commands: new EmbedBuilder()
