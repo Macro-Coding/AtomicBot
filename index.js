@@ -18,8 +18,8 @@ Client.on("ready", () => {
 }) 
 Client.on("messageCreate", (message) => {
     try {
+        if(!message.content.startsWith(BotConfig.prefix)) return console.log(`${message.author.tag} in ${message.guild} in #${message.channel.name} at ${new Date()}: ${message.content}`)
         if (message.author.bot) return
-        if (!message.content.startsWith(BotConfig.prefix)) return console.log(`${message.author.tag} in ${message.guild} in ${message.channel.name}: ${message.content}`)
         const args = message.content.trim()
             .split(/ +/g) 
             const cmd = args[0].slice(BotConfig.prefix.length)

@@ -31,7 +31,7 @@ const Embeds = {
         .setImage("https://media.discordapp.net/attachments/1000503580282867793/1000784830700724274/standard_9.gif"),
     commands: new EmbedBuilder()
         .setTitle("Atomic - Commands")
-        .addFields(CommandFields)
+        .setDescription("All of Atomics Commands have been moved [here](https://atomic-commands.herokuapp.com), thanks for understanding!")
         .setColor("Blue"),
     credits: new EmbedBuilder()
         .setTitle("Atomic - Credits")

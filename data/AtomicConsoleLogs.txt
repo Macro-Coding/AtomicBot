@@ -1,0 +1,3 @@
+Atomic is now online.
+Make Sure To Use "node index.js > ./data/AtomicConsoleLogs.txt" to log all actions made by users for further review.
+Atomic#9442 in Macro Coding in #🤖》bot-commands at Mon Aug 29 2022 14:04:17 GMT-0400 (Eastern Daylight Time): 
