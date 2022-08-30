@@ -1,2 +1,16 @@
 Atomic is now online.
 Make Sure To Use "node index.js > ./data/AtomicConsoleLogs.txt" to log all actions made by users for further review.
+set 1, 1
+Atomic#9442 in Macro Coding in #🤖》bot-commands at Mon Aug 29 2022 23:47:42 GMT-0400 (Eastern Daylight Time): 
+set 1, 2
+Atomic#9442 in Macro Coding in #🤖》bot-commands at Mon Aug 29 2022 23:47:48 GMT-0400 (Eastern Daylight Time): 
+—͟͞͞👑Lucas_26#4403 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:48:08 GMT-0400 (Eastern Daylight Time): maybe we have to reinstall npm
+Maxx#9821 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:48:48 GMT-0400 (Eastern Daylight Time): you can also use `node app.js`
+—͟͞͞👑Lucas_26#4403 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:49:50 GMT-0400 (Eastern Daylight Time): wtf
+Alpha•#9258 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:49:52 GMT-0400 (Eastern Daylight Time): Fixed
+—͟͞͞👑Lucas_26#4403 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:49:58 GMT-0400 (Eastern Daylight Time): how?!
+Alpha•#9258 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:50:02 GMT-0400 (Eastern Daylight Time): 🙂
+Alpha•#9258 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:50:12 GMT-0400 (Eastern Daylight Time): Your serious -,-
+—͟͞͞👑Lucas_26#4403 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:50:31 GMT-0400 (Eastern Daylight Time): with voice as you did heared it
+—͟͞͞👑Lucas_26#4403 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:50:43 GMT-0400 (Eastern Daylight Time): ;,;
+Alpha•#9258 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:50:53 GMT-0400 (Eastern Daylight Time): :v
