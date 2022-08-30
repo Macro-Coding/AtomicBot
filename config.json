@@ -16,6 +16,7 @@
         "DirectMessageReactions",
         "GuildBans",
         "GuildMembers",
-        "MessageContent"
+        "MessageContent",
+        "GuildMessageReactions"
     ]
 }

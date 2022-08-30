@@ -1,16 +1,72 @@
 Atomic is now online.
 Make Sure To Use "node index.js > ./data/AtomicConsoleLogs.txt" to log all actions made by users for further review.
-set 1, 1
-Atomic#9442 in Macro Coding in #🤖》bot-commands at Mon Aug 29 2022 23:47:42 GMT-0400 (Eastern Daylight Time): 
-set 1, 2
-Atomic#9442 in Macro Coding in #🤖》bot-commands at Mon Aug 29 2022 23:47:48 GMT-0400 (Eastern Daylight Time): 
-—͟͞͞👑Lucas_26#4403 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:48:08 GMT-0400 (Eastern Daylight Time): maybe we have to reinstall npm
-Maxx#9821 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:48:48 GMT-0400 (Eastern Daylight Time): you can also use `node app.js`
-—͟͞͞👑Lucas_26#4403 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:49:50 GMT-0400 (Eastern Daylight Time): wtf
-Alpha•#9258 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:49:52 GMT-0400 (Eastern Daylight Time): Fixed
-—͟͞͞👑Lucas_26#4403 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:49:58 GMT-0400 (Eastern Daylight Time): how?!
-Alpha•#9258 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:50:02 GMT-0400 (Eastern Daylight Time): 🙂
-Alpha•#9258 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:50:12 GMT-0400 (Eastern Daylight Time): Your serious -,-
-—͟͞͞👑Lucas_26#4403 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:50:31 GMT-0400 (Eastern Daylight Time): with voice as you did heared it
-—͟͞͞👑Lucas_26#4403 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:50:43 GMT-0400 (Eastern Daylight Time): ;,;
-Alpha•#9258 in Galexo • Discord Community in #╭・💬・chat at Mon Aug 29 2022 23:50:53 GMT-0400 (Eastern Daylight Time): :v
+Atomic#9442 in Macro Coding in #🤖》bot-commands at Tue Aug 30 2022 11:02:48 GMT-0400 (Eastern Daylight Time): got it!
+Atomic#9442 in Macro Coding in #🤖》bot-commands at Tue Aug 30 2022 11:02:48 GMT-0400 (Eastern Daylight Time): Another session is already running 1
+DSC#7931 in Everyone can code! in #dbump-advertising-pls-ignore at Tue Aug 30 2022 11:23:36 GMT-0400 (Eastern Daylight Time): 
+DSC#7931 in Everyone can code! in #dbump-advertising-pls-ignore at Tue Aug 30 2022 11:25:59 GMT-0400 (Eastern Daylight Time): 
+DSC#7931 in Everyone can code! in #dbump-advertising-pls-ignore at Tue Aug 30 2022 11:32:19 GMT-0400 (Eastern Daylight Time): 
+Bot Designer for Discord Official Server #announcements#0000 in Bytes Community in #🔗︱updates at Tue Aug 30 2022 11:41:58 GMT-0400 (Eastern Daylight Time): **Update**
+- `$httpResult[]` can return JSON now
+- Fixed `$httpResult[]` not working with multiple requests
+- Saving a command in the webapp no longer restarts the bots
+- Optimized slash commands resynchronization
+- Fixed custom images not working after saving a command
+- Made it possible to escape `\` by using `\\`
+- **Removed user permission check for $ban[], $banID[], $unban[] and $unbanID[]**
+- Added `$newModal[]`
+- Added `$addTextInput[]`
+- Added `$input[]`
+- Deprecated `$channelIDFromName[]`, use `$channelID[]` instead
+- Added `$onlyForCategories[]`
+- Fixed `$modifyChannelPerms[]` ignoring last permission
+- Added `$onAutoComplete[]` callback
+- Added `$autoCompleteOptionName`
+- Added `$autoCompleteOptionValue`
+- Added `$appendOptionSuggestion[]`
+- Added `$toTitleCase[]`
+- Fixed invite permission calculator
+- Fixed `$suppressErrors[]` and `$embedSuppressErrors[]` getting ignored by components errors
+- Fixed updating some components
+- Added `$registerGuildCommands[]`
+- Added `$unregisterGuildCommands[]`
+- Added `/callback_list`, `/callback_tag_list`, and `/callback/:callback_tag` endpoints to public BDFD API
+- Added `"return ID of the ticket message"` argument to `$newTicket[]`
+- Fixed disappearing slash commands from the app's state
+- Fixed token issues
+- Fixed disappearing slash command options
+- `AllowedMentions` field is now used in `$channelSendMessage[]`, `$sendEmbedMessage[]` and `$sendMessage[]`
+- Fixed black screen after bot creation
+- Fixed in-app tutorial
+- Fixed escaping response in interactions
+- Fixed cooldown error messages
+- Fixed empty values in variables not getting saved
+- Fixed userID being ignored when guildID was passed to `$getUserVar[]`
+- Fixed `$onlyBotChannelPerms[]`
+- Fixed description verification in `$addSelectMenuOption[]` and `$editSelectMenuOption[]`
+- Updated limits of select menu options
+- Fixed updating components which are refering to `$messageID`
+- Added hex to the color picker
+- Fixed `$executionTime` not working inside embed fields
+- App now sends notification when bot hosting is expired
+- Added `$sendNotification[]` for premium bots
+- Made it possible to use only one option in a select menu
+- Fixed `$editChannelPerms[]`
+- Fixed verification of slash command names
+- Added `$scriptLanguage`
+- Fixed `$stop` breaking `$if[]`
+- Renamed `$customImage[]` argument to `Custom image tag`
+- Added `$hypesquad[]`
+- Added `$dmChannelID[]`
+- Fixed the app's max choices limit
+- Fixed `$registerGuildCommands[]` removing previously registered commands
+- Fixed `$reply` not working in DMs
+- Made it possible to return milliseconds and nanoseconds in `$getTimestamp`
+- Fixed `$addTextInput[]` not verifying max length
+- Fixed `$url[]` returning an error when no input was provided
+- Added `$userServerAvatar[]`
+- Fixed `$cropText[]` not supporting unicode
+- Not putting required slash command options on top no longer breaks the commands
+
+Also, a friendly reminder: Enable message content intent if you don't use slash commands! https://support-dev.discord.com/hc/en-us/articles/4404772028055
+
+@here
