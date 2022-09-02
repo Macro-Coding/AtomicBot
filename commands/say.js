@@ -13,13 +13,17 @@ module.exports = {
         for(var i = 1; i < args.length; i++){
             messageS+=args[i]+" "
         }
-        message.delete()
-        const embed = new DiscordJS.EmbedBuilder()
+        message.delete().then(() => {
+            const embed = new DiscordJS.EmbedBuilder()
             .setTitle("New Message")
             .setColor("Aqua")
             .setDescription(messageS)
             .setFooter({text: "Thank You For Chosing Discord to Build Your Community!"})
             .setTimestamp()
         message.channel.send({ embeds : [embed] })
+        }).catch(e => {
+            message.channel.send("I need to be able to delete messages if you want to use that commandh")
+            console.log(e)
+        })
     }
 }
