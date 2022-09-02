@@ -1,3 +1,15 @@
+/* Express Server */
+const express = require('express')
+const app = express()
+const port = 5000
+
+app.get('/', (req, res) => {
+  res.send('https://www.atomic-commands.herokuapp.com')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 /* Module Includes */
 const DiscordJS = require("discord.js");
 const BotConfig = require("./config.json")
