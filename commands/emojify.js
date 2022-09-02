@@ -49,7 +49,7 @@ module.exports = {
     Invoke(client, message, args, cmd) {
         var text = ""
         for(var i = 1; i < args.length; i++){
-            text+=args[i]+" "
+            text+=args[i].toLowerCase()+" "
         }
         const letters = text.split("")
         var resp = ""

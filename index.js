@@ -35,4 +35,4 @@ Client.on("messageCreate", (message) => {
         console.log(e)
     }
 })
-Client.login(BotConfig.token) 
+Client.login(BotConfig.token)

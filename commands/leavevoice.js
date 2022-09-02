@@ -1,8 +1,7 @@
 const checkCommandParameterTypes = require("../lib/methods/checkCommandParameterTypes")
 const botConfig = require("../config.json")
 const DiscordJS = require("discord.js")
-const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
-const http = require("https")
+
 module.exports = {
     Name: "test",
     Usage: `${botConfig.prefix}test`,
@@ -10,6 +9,8 @@ module.exports = {
     Type: "Utility",
     Permissions: [],
     Invoke(client, message, args, cmd) {
-        message.channel.send("lol")
+        const voice = require('@discordjs/voice');
+        voice.getVoiceConnection(message.guild.id).disconnect();
+        message.channel.send("Left the voice channel")
     }
 }

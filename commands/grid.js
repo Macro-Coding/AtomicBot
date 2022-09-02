@@ -43,16 +43,16 @@ module.exports = {
             "▫️","▫️","▫️","▫️","▫️","▫️","▫️","▫️","▫️","▫️"
         ]
         const intmap = {
-            "1" : one,
-            "2" : two,
-            "3" : three,
-            "4" : four,
-            "5" : five,
-            "6" : six,
-            "7" : seven,
-            "8" : eight,
-            "9" : nine,
-            "10" : ten
+            "10" : one,
+            "9" : two,
+            "8" : three,
+            "7" : four,
+            "6" : five,
+            "5" : six,
+            "4" : seven,
+            "3" : eight,
+            "2" : nine,
+            "1" : ten
         }
         const allarr = [
             one,
@@ -104,6 +104,7 @@ module.exports = {
             console.log("cleared")
             message.channel.send("Board has been reset, ||aka: or you filled in the square!||")
         }
+        if(parseInt(args[1]) > 10 || parseInt(args[1]) <= 0 || parseInt(args[2]) > 10 || parseInt(args[2]) <= 0) return message.channel.send("Invalad Number Provided!")
         if(args[1] == "clear" || !one == base && one == two == three == four == five == six == seven == eight == nine == ten) return resetSquares()
         if(!args[1] || parseInt(args[1]) > 10 || parseInt(args[1]) < 0 || parseInt(args[2]) > 10 || parseInt(args[2]) < 0 ) return message.channel.send("Specify two numbers betwene 1 and 10 please!")
         intmap[args[1]][parseInt(args[2])-1] = "🟩"
