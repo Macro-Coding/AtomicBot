@@ -33,7 +33,7 @@ const regions = {
 
 module.exports = {
     Name: "owner info",
-    Usage: `${botConfig.prefix}owner info`,
+    Usage: `${botConfig.prefix}ownerinfo`,
     Arguments: "",
     Type: "Utility",
     Permissions: [],

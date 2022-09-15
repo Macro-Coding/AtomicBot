@@ -4,8 +4,8 @@ const botConfig = require("../config.json")
 const DiscordJS = require("discord.js")
 
 module.exports = {
-    Name: "test",
-    Usage: `${botConfig.prefix}test`,
+    Name: "uptime",
+    Usage: `${botConfig.prefix}uptime`,
     Arguments: "",
     Type: "Utility",
     Permissions: [],
