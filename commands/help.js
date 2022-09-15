@@ -7,10 +7,8 @@ const Commands = fs.readdirSync(__dirname).filter(command => command !== "help.j
 
 const CommandFields = Commands.map(command => {
     const info = require(`./${command}`)
-    console.log(info.Name)
-    return { name: info.Name || "Unknown", value: `Usage: \`${info.Usage || ""}\``, inline: true }
+    return `__***a!${command.replace(".js", "")}***__ Usage: \`a!${info.Usage || ""}\``
 })
-console.log(CommandFields)
 const ContributorFields = Contributors.map(contributor => {
     return { name: contributor.name, value: contributor.role, inline: true }
 })
@@ -31,7 +29,7 @@ const Embeds = {
         .setImage("https://media.discordapp.net/attachments/1000503580282867793/1000784830700724274/standard_9.gif"),
     commands: new EmbedBuilder()
         .setTitle("Atomic - Commands")
-        .setDescription("All of Atomics Commands have been moved [here](https://atomic-commands.herokuapp.com), thanks for understanding!")
+        .setDescription(CommandFields.join("\n"))
         .setColor("Blue"),
     credits: new EmbedBuilder()
         .setTitle("Atomic - Credits")
