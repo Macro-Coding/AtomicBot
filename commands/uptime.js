@@ -29,5 +29,6 @@ module.exports = {
                 embed
             ] 
         })
+        console.log(uptime)
     }
 }
