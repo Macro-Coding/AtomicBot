@@ -21,6 +21,7 @@ server.listen(port, hostname, function() {
 })
 
 /* Module Includes */
+const ContentBlacklist = require("./blacklist.json")
 const DiscordJS = require("discord.js");
 const BotConfig = require("./config.json")
 const FS = require("fs")
@@ -49,12 +50,24 @@ Client.on("messageCreate", (message) => {
 
         const commandIndex = Commands[cmd]
         if (!commandIndex) return message.channel.send(`Invalid command \`${cmd}\`. Please use \`${BotConfig.prefix}help\` for a list of commands.`)
-
+        const cntD = message.content.split(" ")
+        for(let z = 0; z < ContentBlacklist.length; z++){
+            if(cntD.includes(ContentBlacklist[z])){
+                const blackEmbed = new DiscordJS.EmbedBuilder()
+                    .setTitle("Oops You Said A Bad Word!")
+                    .setDescription("No matter the rules of your specific server, to keep a postive use of our bot, we do not allow any of our bots commands to include:\n    __Slurs__,\n    __Hate Speech__\n    __Swear Words__\n    Ect...\nIf you beleve this to be a mistake please report it to the deveopers and we will fix it (`a!report <content>`)\n\nFlagged Word: `"+ContentBlacklist[z]+"`\nDeepest Regaurds, The Macro Coding Team!")
+                    .setColor("Aqua")
+                    .setFooter({text: message.author.tag})
+                    .setTimestamp()
+                return message.channel.send({ embeds: [blackEmbed]})
+            }
+        }
         const commandData = require(`./commands/${commandIndex}`)
         commandData.Invoke(Client, message, args, cmd)
     } catch (e) {
         message.reply("Dang it! an error occurred! ❌")
         console.log(e)
     }
+    
 })
 Client.login(BotConfig.token)
