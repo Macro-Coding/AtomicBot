@@ -22,7 +22,7 @@ module.exports = {
             .setTimestamp()
         message.channel.send({ embeds : [embed] })
         }).catch(e => {
-            message.channel.send("I need to be able to delete messages if you want to use that commandh")
+            message.channel.send("I need to be able to delete messages if you want to use that command!")
             console.log(e)
         })
     }
