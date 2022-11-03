@@ -13,7 +13,7 @@
     "all": "^0.0.0",
     "axios": "^0.27.2",
     "discord-buttons": "^4.0.0-deprecated",
-    "discord.js": "^14.3.0",
+    "discord.js": "^14.6.0",
     "dotenv": "^16.0.1",
     "node-fetch": "2.0"
   },

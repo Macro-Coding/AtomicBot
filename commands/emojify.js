@@ -47,6 +47,7 @@ module.exports = {
     Type: "Utility",
     Permissions: [],
     Invoke(client, message, args, cmd) {
+        if(!args[1]) return message.channel.send("I need to know what to emojify")
         var text = ""
         for(var i = 1; i < args.length; i++){
             text+=args[i].toLowerCase()+" "
